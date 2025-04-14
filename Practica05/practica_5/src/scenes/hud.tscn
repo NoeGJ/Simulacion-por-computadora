@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjql4ukkfy3kv"]
+[gd_scene load_steps=6 format=3 uid="uid://cjql4ukkfy3kv"]
 
 [ext_resource type="FontFile" uid="uid://bk2qlp2v3p5jh" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://336hiueripn" path="res://src/scripts/hud.gd" id="1_64ctp"]
+[ext_resource type="Texture2D" uid="uid://dmgg4bjna7ilu" path="res://art/collection.png" id="3_3i2um"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_64ctp"]
 action = &"start_game"
@@ -70,12 +71,24 @@ one_shot = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 73.0
+offset_left = -80.0
+offset_top = -8.0
+offset_right = -40.0
+offset_bottom = 65.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_37p78")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 text = "-"
+
+[node name="IconColection" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = ExtResource("3_3i2um")
+expand_mode = 2
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

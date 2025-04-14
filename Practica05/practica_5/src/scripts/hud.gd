@@ -5,6 +5,8 @@ signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$collection.hide()
+	$IconColection.hide()
 	pass # Replace with function body.
 
 
@@ -27,7 +29,9 @@ func show_game_over():
 	$Message.show()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
+	$collection.hide()
 	$StartButton.show()
+	$IconColection.hide()
 	$bg.show()
 	
 
@@ -39,7 +43,9 @@ func update_collection(value, max):
 
 func _on_start_button_pressed() -> void:
 	$StartButton.hide()
+	$collection.show()
 	$bg.hide()
+	$IconColection.show()
 	start_game.emit()
 
 
